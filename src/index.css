@@ -1,0 +1,233 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.card{
+    width: 25%;
+    height: 30% !important;
+    padding: 15px 10px 15px 10px;
+    cursor: pointer;
+    margin: 8px;
+    }
+  .card:hover{
+  
+   box-shadow: 0px 0px 4px 4px gainsboro;
+} 
+    .Header_root{
+      margin-left: 350px;
+      display: flex;
+    }
+     .Token_root{
+      margin-left: 350px;
+      display: flex;
+      margin-top: 90px;
+    }
+ .left-text{
+   float: left !important;
+   margin-left: -20px;
+   font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+ }
+ .right-text{
+   float: right !important;
+ }
+ .icon-button{
+    float: right;
+    padding-top: 0px;
+ }
+ .header-button{
+    height: 30px;
+    width: -moz-fit-content;
+    width: 135px;
+    border: none !important;
+    margin: 19px;
+    background: white;
+    cursor: pointer;
+ }
+ button{
+   color:rgb(138, 147, 155);
+   border: blue;
+ }
+ .header-button:hover{
+   color: black;
+   background-color: gainsboro;
+ }
+ .header-button:active{
+   border: none;
+ }
+ .header-image{
+   width: 26px;
+ }
+ .TabNavItem--name{
+   white-space: nowrap;
+ }
+ /* .jOKjXn .CategoryBar--tab-item {
+    padding: 0px 20px;
+    flex-shrink: 0;
+    margin: 0px 5px;
+}
+.dbsVw.TabNavItem--active {
+    background-color: rgb(229, 232, 235);
+    font-weight: 500;
+}
+.dbsVw {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 8px 16px;
+    margin: 0px 12px;
+    font-weight: 500;
+    transition: all 0.3s ease 0s;
+}
+.eOLEwm {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 100%;
+    font-family: inherit;
+    border: 0px;
+    padding: 0px;
+    background: inherit;
+} */
+/* Header component Css */
+.main-header{
+    background-color: white;
+    height: 25%;
+    box-shadow: 0px 0px 20px 0px gainsboro;
+}
+.title{
+    font-size: 23px;
+    font-weight: 450;
+    float: left;
+    margin: 20px 0px 0px -153px;
+}
+.logo 
+{
+    width: 37px;
+    position: absolute;
+    margin-left: -45px;
+}
+.search{
+    top: 15px;
+    left: -68px;
+    white-space: nowrap;
+}
+.form-control {
+    border: blue 1px solid;
+    height: 50px; 
+}
+.nav-bar{
+    display: flex;
+    left: 745px;
+    top: -18px;
+    font-size: large;
+    font-weight: 500;
+    
+}
+.nav-item
+{
+   color: black;
+   background-color: white;
+   padding: 0px 37px 2px 18px;
+}
+
+/* collection component css */
+
+.collection-sidenav
+{
+  height: 700px;
+  background-color: white;
+}
+.collection-right
+{
+  top: -683px;
+  left: -300px;
+}
+.collection-card{
+    width: 15%;
+    height: 280px;
+    padding: 17px 10px 15px 0px;
+    cursor: pointer;
+    margin: 69px 0px 0px 595px;
+    box-shadow: 0px 0px 2px 2px gainsboro;
+}
+.span{
+    font-size: 15px;
+    font-weight: 600;
+}
+.icon
+{
+   margin-top: inherit;
+}
+.create{
+    width: 133px;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center !important;
+}
+.MuiDialog-paperWidthSm {
+    width: 450px !important;
+    height: 600px;
+}
+.MuiTypography-h6{
+  font-weight: 400 !important;
+  font-size: 20px !important;
+  text-align: center;
+}
+.MuiTypography-body1 {
+    font-size: 12px !important;
+    text-align: center;
+    }
+ #imagePreview {
+  margin: 15px 0 0 0;
+  border: 2px solid #ddd;
+}  
+.DialogContentText{
+  float: left !important;
+} 
+label{
+  float: left !important;
+}
+#logo{
+  margin-left: -32px;
+}
+.img-icon{
+    margin-left: -260px !important;
+    margin-top: 20px;
+}
+.svg {
+    width: 33% !important;
+    height: 20% !important;
+    border: gainsboro 2px dotted !important;
+    padding: 25px 25px 25px 25px !important;
+}
+.input-text
+{
+    margin: -1px 0px 0px -7px;
+    width: 100%;
+    padding: 10px 5px 15px 24px;
+    border: gainsboro 1px solid;
+    border-radius: 6px;
+}
+.textarea{
+  height: 100px;
+}
+.black{
+  color: black;
+}
+.last{
+      margin-left: 125px;
+}
