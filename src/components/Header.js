@@ -12,29 +12,18 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Slide from '@material-ui/core/Slide';
+import { Modal } from 'react-bootstrap';
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="right" ref={ref} {...props} />;
-});
+
 export const Header = () => {
   const history = useHistory();
    const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-   const [wallet, setWallet] = React.useState(false);
+   const [show, setShow] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setWallet(true);
-  };
-
-  const handleClickClose = () => {
-    setWallet(false);
-     };
+  const HandleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -109,35 +98,22 @@ export const Header = () => {
           )}
         </Popper>
       </div>
-        
-        <Button className="nav-item" variant="outlined" color="primary" onClick={handleClickOpen} > <AccountBalanceWalletIcon/> 
-      <Dialog
-        open={wallet}
-        TransitionComponent={Transition}
-        onClose={handleClickClose}
-        keepMounted
-        aria-labelledby="alert-dialog-slide-title"
-        aria-describedby="alert-dialog-slide-description"
-      >
-        <DialogTitle id="alert-dialog-slide-title">{"Use Google's location service?"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
-            Let Google help apps determine location. This means sending anonymous location data to
-            Google, even when no apps are running.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClickClose} color="primary">
-            Disagree
-          </Button>
-          <Button onClick={handleClickClose} color="primary">
-            Agree
-          </Button>
-        </DialogActions>
-      </Dialog>
-     </Button>
-
-       
+         <Button variant="primary" className="nav-item" onClick={handleShow}>
+          <AccountBalanceWalletIcon/>
+      </Button>
+      <Modal show={show} onHide={HandleClose} animation={false}>
+        <Modal.Header closeButton>
+          <Modal.Title><div><AccountCircleIcon className="wallet-icon"/> d1zzrds</div></Modal.Title>
+        </Modal.Header>
+        <Modal.Body >
+         <div className="wallet">
+         <span className="total"> Total balance </span> 
+         <br/>
+         <span className="balance">  $0.000 USD </span>
+         </div>
+         <button className="btn-btn-primary add-funds"> Add Funds </button> 
+        </Modal.Body>
+      </Modal>
        </div>
        
     </div>
