@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -25,6 +26,8 @@ code {
     .Header_root{
       margin-left: 350px;
       display: flex;
+      overflow-x: scroll;
+      overflow-y: hidden;
     }
      .Token_root{
       margin-left: 350px;
@@ -157,8 +160,8 @@ code {
   left: -300px;
 }
 .collection-card{
-    width: 15%;
-    height: 280px;
+    width: 20%;
+    height: 320px;
     padding: 17px 10px 15px 0px;
     cursor: pointer;
     margin: 69px 0px 0px 595px;
@@ -216,7 +219,7 @@ label{
 }
 .input-text
 {
-    margin: -1px 0px 0px -7px;
+    margin: 10px 0px 0px -7px;
     width: 100%;
     padding: 10px 5px 15px 24px;
     border: gainsboro 1px solid;
@@ -230,4 +233,14 @@ label{
 }
 .last{
       margin-left: 125px;
+}
+.store-icon{
+    fill: #b8b4b4 !important;
+    width: 60px !important;
+    height: 70px !important;
+}
+.MuiMenuItem-root {
+    font-size: 19px !important;
+    line-height: 2.5 !important;
+    
 }
