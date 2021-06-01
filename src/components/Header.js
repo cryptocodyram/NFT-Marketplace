@@ -1,6 +1,6 @@
 import React from 'react';
-import OpenSea from '../assets/opensea-logo.webp';
 import { useHistory } from "react-router-dom";
+import OpenSea from '../assets/opensea-logo.webp';
 import SearchIcon from "@material-ui/icons/Search";
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
@@ -16,23 +16,28 @@ import { Modal } from 'react-bootstrap';
 
 
 export const Header = () => {
-  const history = useHistory();
+   let history = useHistory();
    const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef(null);
+   const anchorRef = React.useRef(null);
    const [show, setShow] = React.useState(false);
 
   const HandleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
-
+  function handleClick() {
+    window.location.href = "/asset"
+   }
+   function handleCollection(){
+     window.location.href="/collection"
+   }
+   
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
 
   const handleClose = (event) => {
-    // if (anchorRef.current && anchorRef.current.contains(event.target)) {
-    //   return;
-    // }
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
     setOpen(false);
   };
 
@@ -52,23 +57,21 @@ export const Header = () => {
 
     prevOpen.current = open;
   }, [open]);
+  
   return (
-    <div>
+    <div >
     <row>
     <div className="col-lg-12 main-header" >
       <div className="col-lg-4 title">
-        <img src={OpenSea}  className="logo"></img>
-         OpenSea 
+         WNFT 
       </div>
       <div className=" col-md-6 input-group rounded search">
-          <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search"
-          aria-describedby="search-addon" />
+        <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search"
+        aria-describedby="search-addon" />
       </div>
       <div className= "col-lg-4 nav-bar" >
-        <button className="nav-item" onClick={()=>{history.push('/asset')}}> Marketplace </button>
-        <button className="nav-item" > Stats </button>
-        <button className="nav-item" > Resources </button>
-        <div>
+        <button className="nav-item" onClick={handleClick}> Marketplace </button>
+        <div style={{zIndex: "1"}}>
         <Button
           ref={anchorRef}
           aria-controls={open ? 'menu-list-grow' : undefined}
@@ -82,19 +85,19 @@ export const Header = () => {
             <Grow
               {...TransitionProps}
               style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-            >
-              <Paper>
-                <ClickAwayListener onMouseLeave={handleClose}>
-                  <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}> My Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My Collection</MenuItem>
-                    <MenuItem onClick={handleClose}>My Favorites</MenuItem>
-                    <MenuItem onClick={handleClose}>My Account Settings</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            </Grow>
+          >
+          <Paper>
+            <ClickAwayListener onHide={handleClose}>
+              <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                <MenuItem onClick={handleClose}> My Profile</MenuItem>
+                <MenuItem onClick={handleCollection}>My Collection</MenuItem>
+                <MenuItem onClick={handleClose}>My Favorites</MenuItem>
+                <MenuItem onClick={handleClose}>My Account Settings</MenuItem>
+                <MenuItem onClick={handleClose}>Logout</MenuItem>
+              </MenuList>
+            </ClickAwayListener>
+          </Paper>
+        </Grow>
           )}
         </Popper>
       </div>
@@ -103,13 +106,13 @@ export const Header = () => {
       </Button>
       <Modal show={show} onHide={HandleClose} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title><div><AccountCircleIcon className="wallet-icon"/> d1zzrds</div></Modal.Title>
+        <Modal.Title><div><AccountCircleIcon className="wallet-icon"/> d1zzrds</div></Modal.Title>
         </Modal.Header>
         <Modal.Body >
          <div className="wallet">
          <span className="total"> Total balance </span> 
          <br/>
-         <span className="balance">  $0.000 USD </span>
+         <span className="balance" style={{whiteSpace :"nowrap"}}>  $0.000<img src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg" width="3%"></img></span> 
          </div>
          <button className="btn-btn-primary add-funds"> Add Funds </button> 
         </Modal.Body>

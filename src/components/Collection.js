@@ -13,15 +13,19 @@ export const Collection = () => {
   const handleClickOpen = () => {
     setOpen(true);
   };
-
+  
   const handleClose = () => {
     setOpen(false);
   };
+
+  const onSubmit = () =>{
+
+  }
   return (
     <row>
   
       <div className="col-lg-2 collection-sidenav">
-         hello
+        
       </div>
       <div className="col-lg-10 collection-right">
         <h4>My Collections</h4>
@@ -61,6 +65,8 @@ export const Collection = () => {
             <button type="button" class="btn btn-primary create last"  > Create </button>
         </DialogContent>
       </Dialog>
+        </div>
+        <div className="collection-card2">
         </div>
       </div>
     </row>
