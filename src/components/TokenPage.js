@@ -17,7 +17,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 export const TokenPage = () => {
    
   return (
-    <div>
+    <div >
       <div className="Header_root">
       <button aria-selected="true" className="header-button" type="button">
        <div className="header-icon"><img className="header-image" src={Art}/>
@@ -60,7 +60,7 @@ export const TokenPage = () => {
        </div>
        </button>
     </div>
-    <div className="col-lg-9 Token_root ">
+    <div className="col-lg-8 Token_root ">
         <div className="card">
         <header>
            <IconButton className="icon-button">
