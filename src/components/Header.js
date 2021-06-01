@@ -22,9 +22,9 @@ export const Header = () => {
       <div className= "col-lg-4 nav-bar" >
         <button className="nav-item" onClick={()=>{history.push('/asset')}}> Marketplace </button>
         <button className="nav-item" onClick={()=>{history.push('/asset')}}> Stats </button>
-        <button className="nav-item" onClick={()=>{history.push('/asset')}}> Resources </button>
+        <button className="nav-item" > Resources </button>
         <button className="nav-item" onClick={()=>{history.push('/collection')}}> <AccountCircleIcon/> </button>
-        <button className="nav-item" onClick={()=>{history.push('/asset')}}> <AccountBalanceWalletIcon/> </button>
+        <button className="nav-item" > <AccountBalanceWalletIcon/> </button>
        </div>
     </div>
     </row>
