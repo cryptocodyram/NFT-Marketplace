@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import OpenSea from '../assets/opensea-logo.webp';
 import SearchIcon from "@material-ui/icons/Search";
@@ -13,13 +13,31 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { Modal } from 'react-bootstrap';
+import Web3 from 'web3';
 
 
 export const Header = () => {
-   let history = useHistory();
-   const [open, setOpen] = React.useState(false);
-   const anchorRef = React.useRef(null);
-   const [show, setShow] = React.useState(false);
+  let history = useHistory();
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef(null);
+  const [show, setShow] = React.useState(false);
+  const [ account, setAccount ] = React.useState();
+  const [ balance, setBalance ] = React.useState();
+
+  useEffect(()=>{
+    loadBlockchainData()
+  })
+
+  const loadBlockchainData = async () => {
+    const web3 = new Web3(window.web3.currentProvider);
+    // Load account
+    const accounts = await web3.eth.getAccounts()
+    setAccount(accounts[0])
+    const bal = await web3.eth.getBalance(accounts[0])
+    const getbalance = web3.utils.fromWei(new web3.utils.BN(bal),'ETHER')
+    console.log(getbalance)
+    setBalance(getbalance)
+  }
 
   const HandleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -106,13 +124,13 @@ export const Header = () => {
       </Button>
       <Modal show={show} onHide={HandleClose} animation={false}>
         <Modal.Header closeButton>
-        <Modal.Title><div><AccountCircleIcon className="wallet-icon"/> d1zzrds</div></Modal.Title>
+        <Modal.Title><div><AccountCircleIcon className="wallet-icon"/> {account}</div></Modal.Title>
         </Modal.Header>
         <Modal.Body >
          <div className="wallet">
          <span className="total"> Total balance </span> 
          <br/>
-         <span className="balance" style={{whiteSpace :"nowrap"}}>  $0.000<img src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg" width="3%"></img></span> 
+         <span className="balance" style={{whiteSpace :"nowrap"}}>  <img src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg" width="3%"></img> {balance} ETH</span> 
          </div>
          <button className="btn-btn-primary add-funds"> Add Funds </button> 
         </Modal.Body>
