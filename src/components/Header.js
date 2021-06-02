@@ -132,7 +132,7 @@ export const Header = () => {
          <br/>
          <span className="balance" style={{whiteSpace :"nowrap"}}>  <img src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg" width="3%"></img> {balance} ETH</span> 
          </div>
-         <button className="btn-btn-primary add-funds"> Add Funds </button> 
+         <button className="btn-btn-primary add-funds"> Add Fund </button> 
         </Modal.Body>
       </Modal>
        </div> 
