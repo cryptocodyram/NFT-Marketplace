@@ -135,12 +135,9 @@ export const Header = () => {
          <button className="btn-btn-primary add-funds"> Add Funds </button> 
         </Modal.Body>
       </Modal>
-       </div>
-       
+       </div> 
     </div>
     </row>
-   
-
 </div>
   )
 }
